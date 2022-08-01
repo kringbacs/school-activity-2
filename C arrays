@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int size;
+int sum;
+
+int function1(int arry2[size], int x);
+
+int main()
+{
+    int counter;
+
+    printf("size of array: ");
+    scanf("%d", &size);
+
+    int arry[size];
+
+    for(counter = 0; counter < size ; counter++){
+        printf("Element %d: ", counter + 1);
+        scanf("%d", &arry[counter]);
+    }
+
+    function1(arry , 0);
+
+    printf("Sum of all array elements: %d\n\n", sum);
+
+    return 0;
+}
+
+int function1(int arry2[] , int x)
+{
+    sum += arry2[x];
+
+    if (x == size){
+        return (sum);
+    }else {
+        return function1(arry2, x + 1);
+    }
+
+}
